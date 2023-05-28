@@ -31,7 +31,8 @@
             android:text="Judul"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginStart="16dp" />
+            android:layout_marginStart="16dp"
+            android:textColor="@color/purple_500"/>
 
         <TextView
             android:id="@+id/deskripsi_universe"
