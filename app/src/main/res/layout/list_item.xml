@@ -10,17 +10,17 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="130dp"
         android:padding="16dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/gambar_universe"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:src="@mipmap/ic_launcher"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="10dp" />
+            android:layout_marginStart="8dp" />
 
         <TextView
             android:id="@+id/judul_universe"
@@ -43,7 +43,9 @@
             android:text="Deskripsi Singkat"
             android:textSize="15sp"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp" />
+            android:layout_marginStart="16dp"
+            android:maxLines="3"
+            android:ellipsize="end" />
 
     </RelativeLayout>
 
