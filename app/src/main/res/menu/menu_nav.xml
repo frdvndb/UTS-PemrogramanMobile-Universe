@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigasi_planet"
+        android:icon="@drawable/ic_baseline_expand_circle_down_24"
+        android:title="Planets" />
+
+    <item
+        android:id="@+id/navigasi_galaxy"
+        android:icon="@drawable/ic_outline_expand_circle_down_24"
+        android:title="Galaxies" />
+
+</menu>
