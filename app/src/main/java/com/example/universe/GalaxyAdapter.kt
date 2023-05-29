@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 // Kelas yang bertanggungjawab untuk binding data Galaxy ke RecyclerView
-class GalaxyAdapter(private val data: List<UniverseModel>, val listener: (UniverseModel) -> Unit) :
+class GalaxyAdapter(private val data: List<UniverseModel>, private val listener: (UniverseModel) -> Unit) :
     RecyclerView.Adapter<GalaxyAdapter.GalaxyViewHolder>() {
 
     class GalaxyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val gambarGalaxy = view.findViewById<ImageView>(R.id.gambar_universe)
-        val judulGalaxy = view.findViewById<TextView>(R.id.judul_universe)
-        val deskripsiGalaxy = view.findViewById<TextView>(R.id.deskripsi_universe)
+        private val gambarGalaxy: ImageView = view.findViewById(R.id.gambar_universe)
+        private val judulGalaxy: TextView = view.findViewById(R.id.judul_universe)
+        private val deskripsiGalaxy: TextView = view.findViewById(R.id.deskripsi_universe)
 
         fun bindView(data: UniverseModel, listener: (UniverseModel) -> Unit) {
             gambarGalaxy.setImageResource(data.gambarUniverse)
@@ -22,18 +22,18 @@ class GalaxyAdapter(private val data: List<UniverseModel>, val listener: (Univer
             deskripsiGalaxy.text = data.deskripsiUniverse
 
             itemView.setOnClickListener {
-                (listener(data))
+                listener(data)
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalaxyAdapter.GalaxyViewHolder {
-        return GalaxyAdapter.GalaxyViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalaxyViewHolder {
+        return GalaxyViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: GalaxyAdapter.GalaxyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: GalaxyViewHolder, position: Int) {
         holder.bindView(data[position], listener)
     }
 
