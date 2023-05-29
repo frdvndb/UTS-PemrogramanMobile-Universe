@@ -16,7 +16,6 @@ import com.example.universe.listPlanet
 
 // Fragment Planet
 class PlanetFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,11 +31,5 @@ class PlanetFragment : Fragment() {
             startActivity(intent)
         }
         return view
-    }
-
-    companion object {
-        fun newInstance(): PlanetFragment {
-            return PlanetFragment()
-        }
     }
 }

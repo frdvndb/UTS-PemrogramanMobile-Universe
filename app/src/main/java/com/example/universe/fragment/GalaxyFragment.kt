@@ -22,17 +22,11 @@ class GalaxyFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = PlanetAdapter(listGalaxy) { planet ->
+        recyclerView.adapter = GalaxyAdapter(listGalaxy) { galaxy ->
             val intent = Intent(requireContext(), UniverseDetail::class.java)
-            intent.putExtra(INTENT_PARCELABLE, planet)
+            intent.putExtra(INTENT_PARCELABLE, galaxy)
             startActivity(intent)
         }
         return view
-    }
-
-    companion object {
-        fun newInstance(): GalaxyFragment {
-            return GalaxyFragment()
-        }
     }
 }
